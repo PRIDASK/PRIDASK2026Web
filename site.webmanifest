@@ -1,0 +1,16 @@
+{
+  "name": "PRIDASK Official Site",
+  "short_name": "PRIDASK",
+  "description": "楽曲・3DCG映像・ゲーム・全て自分たちで創る。札幌発インディペンデント型サイバーミュージック・デュオ。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a001f",
+  "theme_color": "#1b0b44",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

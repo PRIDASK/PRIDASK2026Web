@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pridask.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pridask.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pridask.com/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pridask.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pridask.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pridask.com/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pridask.com/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pridask.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pridask.com/en/works.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pridask.com/en/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
