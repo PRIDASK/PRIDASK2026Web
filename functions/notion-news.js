@@ -7,7 +7,7 @@
  */
 
 export async function onRequest(context) {
-  const NOTION_API_KEY = "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";
+  const NOTION_API_KEY = "XXX";
   const { searchParams } = new URL(context.request.url);
   const db = searchParams.get("db") || "";
 
