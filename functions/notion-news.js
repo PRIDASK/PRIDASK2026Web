@@ -1,108 +1,51 @@
-export async function onRequest(context) {
-  const { request, env } = context;
+document.addEventListener("DOMContentLoaded", async () => {
+  // 1. 正しいデータベースIDを指定してAPIを叩く
+  const dbId = "35fca6b1bc7d80e2bf0ac3ffd02a7349";
+  const apiUrl = `/notion-news?db=${dbId}`;
 
-  /* =========================
-     環境変数
-  ========================= */
-  const NOTION_API_KEY = env.NOTION_API_KEY;
+  // index.htmlのNewsセクションの中にある、リストを入れるコンテナ要素（ul）を取得
+  const newsContainer = document.querySelector(".news-section ul");
 
-  /* =========================
-     URLパラメータ取得
-     /notion-news?db=XXXX
-  ========================= */
-  const url = new URL(request.url);
-  const db = url.searchParams.get("db");
-
-  /* =========================
-     共通レスポンスヘッダ
-  ========================= */
-  const headers = {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-    // 5分キャッシュ（Cloudflare側）
-    "Cache-Control": "public, max-age=300",
-  };
-
-  /* =========================
-     OPTIONS（CORS preflight）
-  ========================= */
-  if (request.method === "OPTIONS") {
-    return new Response(null, { headers });
+  if (!newsContainer) {
+    console.error("Newsセクションのul要素が見つかりませんでした。");
+    return;
   }
 
-  /* =========================
-     エラーチェック
-  ========================= */
-  if (!NOTION_API_KEY) {
-    return new Response(
-      JSON.stringify({ error: "NOTION_API_KEY is not set" }),
-      { status: 500, headers }
-    );
-  }
-
-  if (!db) {
-    return new Response(
-      JSON.stringify({ error: "db parameter is required" }),
-      { status: 400, headers }
-    );
-  }
-
-  /* =========================
-     Notion API 呼び出し
-  ========================= */
-  let notionRes;
   try {
-    notionRes = await fetch(
-      `https://api.notion.com/v1/databases/${db}/query`,
-      {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${NOTION_API_KEY}`,
-          "Notion-Version": "2022-06-28",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          page_size: 10,
-          sorts: [
-            {
-              property: "日付", // ← Notionのプロパティ名と完全一致させる
-              direction: "descending",
-            },
-          ],
-        }),
-      }
-    );
-  } catch (err) {
-    return new Response(
-      JSON.stringify({ error: "Failed to fetch Notion API", detail: err.message }),
-      { status: 500, headers }
-    );
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("ネットワークの応答が良くありません。");
+    
+    const data = await response.json();
+
+    // 既存の静的なダミーニュース（HTMLに元々書いてあるやつ）を一度空にする
+    newsContainer.innerHTML = "";
+
+    // 2. Notionから返ってきた記事データをループ処理でHTMLに変換する
+    data.results.forEach((page) => {
+      // タイトル（名前）の取得
+      const title = page.properties.名前.title[0]?.plain_text || "無題のニュース";
+      
+      // 日付の取得（2026-04-26 などの文字列を 2026.04.26 に変換）
+      const rawDate = page.properties.日付.date?.start || "";
+      const date = rawDate ? rawDate.replace(/-/g, ".") : "日付未設定";
+
+      // マルチセレクト（カテゴリタグなど。今回は最初の1つを取得）
+      const category = page.properties.マルチセレクト.multi_select[0]?.name || "INFO";
+
+      // 3. index.htmlの元のデザインに合わせたHTMLパーツを組み立て
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span class="news-date">${date}</span>
+        <span class="news-category">${category}</span>
+        <p class="news-title">${title}</p>
+      `;
+
+      // 画面（ulの中）に追加
+      newsContainer.appendChild(li);
+    });
+
+  } catch (error) {
+    console.error("Notionデータの読み込みに失敗しました:", error);
+    newsContainer.innerHTML = `<li><p class="news-title" style="color: red;">ニュースの読み込みに失敗しました。</p></li>`;
   }
-
-  /* =========================
-     Notion API エラー処理
-  ========================= */
-  if (!notionRes.ok) {
-    const text = await notionRes.text();
-    return new Response(
-      JSON.stringify({
-        error: "Notion API error",
-        status: notionRes.status,
-        detail: text,
-      }),
-      { status: notionRes.status, headers }
-    );
-  }
-
-  /* =========================
-     正常レスポンス
-  ========================= */
-  const data = await notionRes.json();
-
-  return new Response(JSON.stringify(data), {
-    status: 200,
-    headers,
-  });
-}
+});
