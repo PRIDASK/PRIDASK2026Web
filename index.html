@@ -974,14 +974,7 @@ function copyEmail() {
 	 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  // ── Notion API経由でNewsを取得 ──
-  const NOTION_API_KEY = "XXX";
-  const DATABASE_ID    = "XXX";
-
-  // Notion APIはCORSがあるためCFワーカー不要・直接fetchできない
-  // → alloriginsの代わりにCloudflare Pagesのプロキシ関数を使う
-  // （Cloudflare Pages Functions: /functions/notion-news.js）
+  const DATABASE_ID = "XXX"; // ← NotionのDB IDだけ書く（APIキーは書かない）
   const apiUrl = `/functions/notion-news?db=${DATABASE_ID}`;
 
   const list = document.getElementById("news-list");
@@ -992,7 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch(apiUrl)
     .then(res => {
-      if (!res.ok) throw new Error("Notion fetch error: " + res.status);
+      if (!res.ok) throw new Error("Fetch error: " + res.status);
       return res.json();
     })
     .then(data => {
@@ -1005,21 +998,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       results.forEach(page => {
-        // Notionのプロパティからタイトル・日付・URLを取得
-        const titleProp = page.properties["タイトル"]?.title?.[0]?.plain_text || "Untitled";
-        const dateProp  = page.properties["日付"]?.date?.start || "";
-        const urlProp   = page.properties["URL"]?.url || page.url || "#";
+        const title =
+          page.properties?.["タイトル"]?.title?.[0]?.plain_text
+          ?? "Untitled";
 
-        const d = dateProp ? new Date(dateProp) : null;
-        const dateStr = d
-          ? `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`
-          : "";
+        const dateRaw =
+          page.properties?.["日付"]?.date?.start ?? "";
+
+        const url =
+          page.properties?.["URL"]?.url
+          ?? page.url
+          ?? "#";
+
+        let dateStr = "";
+        if (dateRaw) {
+          const d = new Date(dateRaw);
+          dateStr = `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
+        }
 
         const li = document.createElement("li");
         li.className = "news-item";
         li.innerHTML = `
           <time class="news-date">${dateStr}</time>
-          <a href="${urlProp}" target="_blank" rel="noopener" class="news-title">${titleProp}</a>
+          <a href="${url}" target="_blank" rel="noopener" class="news-title">
+            ${title}
+          </a>
           <hr class="news-separator">
         `;
         list.appendChild(li);
