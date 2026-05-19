@@ -836,16 +836,18 @@ PRIDASKの映像は、撮影・編集・3DCG制作まで完全セルフワーク
     <h2 class="section-title">SNS</h2>
     <div class="social-grid">
       <div class="social-card">
-        <div class="social-card-header">
-          <i class="fab fa-x-twitter social-icon x-color"></i>
-          <span class="social-card-name">X</span>
-          <a href="https://x.com/aikapin" target="_blank" class="social-follow-btn">Follow</a>
-        </div>
-        <div class="social-embed">
-          <a class="twitter-timeline" data-width="100%" data-height="480" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/aikapin?ref_src=twsrc%5Etfw">Tweets by aikapin</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
+  <div class="social-card-header">
+    <i class="fab fa-x-twitter social-icon x-color"></i>
+    <span class="social-card-name">X</span>
+    <a href="https://x.com/aikapin" target="_blank" class="social-follow-btn">Follow</a>
+  </div>
+  <div class="social-embed">
+    <blockquote class="twitter-tweet" data-theme="dark" data-width="100%">
+      <a href="https://twitter.com/aikapin/status/1851963950331543831"></a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
 
       <div class="social-card">
         <div class="social-card-header">
@@ -854,7 +856,12 @@ PRIDASKの映像は、撮影・編集・3DCG制作まで完全セルフワーク
           <a href="https://www.youtube.com/@PRIDASK" target="_blank" class="social-follow-btn">Subscribe</a>
         </div>
         <div class="social-embed social-youtube-embed">
-          <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PRIDASK&index=1" width="100%" height="340" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          <iframe 
+  src="https://www.youtube.com/embed/videoseries?list=PLVOG26i6Vg32-PbYkDQv1LbHaTcCzp_Wj&index=1" 
+  width="100%" height="480" frameborder="0" 
+  allow="autoplay; encrypted-media; picture-in-picture"
+  allowfullscreen loading="lazy">
+</iframe>
         </div>
       </div>
 
@@ -914,7 +921,8 @@ PRIDASKの映像は、撮影・編集・3DCG制作まで完全セルフワーク
         <strong>【ご依頼時のお願い】</strong><br>
         お問い合わせの際は、お名前（会社名）、ご用件、ご予算、納期などを可能な限り明記していただけますと幸いです。<br>
 通常3営業日以内にご返信いたしますが、<br>
-ご連絡内容によっては返信を差し上げられないことがあります。ご了承ください。
+ご連絡内容によっては返信を差し上げられないことがあります。
+ご了承ください。
       </p>
     </div>
   </div>
@@ -934,35 +942,6 @@ function copyEmail() {
 }
 </script>
 
-<!-- SNS埋め込みスクリプト（遅延読み込み） -->
-<script>
-  // Instagram
-  window.addEventListener('load', function() {
-    if (document.getElementById('sns-instagram').classList.contains('active')) {
-      var s = document.createElement('script');
-      s.src = 'https://www.instagram.com/embed.js';
-      s.async = true;
-      document.body.appendChild(s);
-    }
-  });
-
-  // Twitter/X
-  window.addEventListener('load', function() {
-    var s = document.createElement('script');
-    s.src = 'https://platform.twitter.com/widgets.js';
-    s.async = true;
-    s.charset = 'utf-8';
-    document.body.appendChild(s);
-  });
-
-  // TikTok
-  window.addEventListener('load', function() {
-    var s = document.createElement('script');
-    s.src = 'https://www.tiktok.com/embed.js';
-    s.async = true;
-    document.body.appendChild(s);
-  });
-</script>
 
 <footer class="site-footer">
   <div class="footer-inner">
