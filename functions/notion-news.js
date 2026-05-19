@@ -1,57 +1,108 @@
-/**
- * Cloudflare Pages Function
- * GET /functions/notion-news?db=DATABASE_ID
- *
- * Notion APIはブラウザから直接叩けない（CORS制限）ため
- * このサーバーサイド関数を通して取得する
- */
-
 export async function onRequest(context) {
-  const NOTION_API_KEY = "XXX";
-  const { searchParams } = new URL(context.request.url);
-  const db = searchParams.get("db") || "";
+  const { request, env } = context;
+
+  /* =========================
+     環境変数
+  ========================= */
+  const NOTION_API_KEY = env.NOTION_API_KEY;
+
+  /* =========================
+     URLパラメータ取得
+     /notion-news?db=XXXX
+  ========================= */
+  const url = new URL(request.url);
+  const db = url.searchParams.get("db");
+
+  /* =========================
+     共通レスポンスヘッダ
+  ========================= */
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    // 5分キャッシュ（Cloudflare側）
+    "Cache-Control": "public, max-age=300",
+  };
+
+  /* =========================
+     OPTIONS（CORS preflight）
+  ========================= */
+  if (request.method === "OPTIONS") {
+    return new Response(null, { headers });
+  }
+
+  /* =========================
+     エラーチェック
+  ========================= */
+  if (!NOTION_API_KEY) {
+    return new Response(
+      JSON.stringify({ error: "NOTION_API_KEY is not set" }),
+      { status: 500, headers }
+    );
+  }
 
   if (!db) {
-    return new Response(JSON.stringify({ error: "db parameter required" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ error: "db parameter is required" }),
+      { status: 400, headers }
+    );
   }
 
-  const notionRes = await fetch(
-    `https://api.notion.com/v1/databases/${db}/query`,
-    {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${NOTION_API_KEY}`,
-        "Notion-Version": "2022-06-28",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        sorts: [{ property: "日付", direction: "descending" }],
-        page_size: 10,
-      }),
-    }
-  );
+  /* =========================
+     Notion API 呼び出し
+  ========================= */
+  let notionRes;
+  try {
+    notionRes = await fetch(
+      `https://api.notion.com/v1/databases/${db}/query`,
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${NOTION_API_KEY}`,
+          "Notion-Version": "2022-06-28",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          page_size: 10,
+          sorts: [
+            {
+              property: "日付", // ← Notionのプロパティ名と完全一致させる
+              direction: "descending",
+            },
+          ],
+        }),
+      }
+    );
+  } catch (err) {
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch Notion API", detail: err.message }),
+      { status: 500, headers }
+    );
+  }
 
+  /* =========================
+     Notion API エラー処理
+  ========================= */
   if (!notionRes.ok) {
-    const err = await notionRes.text();
-    return new Response(JSON.stringify({ error: err }), {
-      status: notionRes.status,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+    const text = await notionRes.text();
+    return new Response(
+      JSON.stringify({
+        error: "Notion API error",
+        status: notionRes.status,
+        detail: text,
+      }),
+      { status: notionRes.status, headers }
+    );
   }
 
+  /* =========================
+     正常レスポンス
+  ========================= */
   const data = await notionRes.json();
 
   return new Response(JSON.stringify(data), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=300", // 5分キャッシュ
-    },
+    status: 200,
+    headers,
   });
 }
