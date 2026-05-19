@@ -974,23 +974,22 @@ function copyEmail() {
 	 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const DATABASE_ID = "XXX"; // ← NotionのDB IDだけ書く（APIキーは書かない）
-  const apiUrl = `/functions/notion-news?db=${DATABASE_ID}`;
+  const DATABASE_ID = "35fca6b1bc7d80479f03000cf6437bbd";
+  const apiUrl = `/notion-news?db=${DATABASE_ID}`;
 
   const list = document.getElementById("news-list");
   if (!list) return;
 
-  // ローディング表示
   list.innerHTML = `<li class="news-item news-loading">Loading...</li>`;
 
   fetch(apiUrl)
     .then(res => {
-      if (!res.ok) throw new Error("Fetch error: " + res.status);
+      if (!res.ok) throw new Error(res.status);
       return res.json();
     })
     .then(data => {
-      list.innerHTML = "";
       const results = data.results || [];
+      list.innerHTML = "";
 
       if (results.length === 0) {
         list.innerHTML = `<li class="news-item">記事がありません</li>`;
@@ -999,40 +998,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       results.forEach(page => {
         const title =
-          page.properties?.["タイトル"]?.title?.[0]?.plain_text
-          ?? "Untitled";
-
-        const dateRaw =
-          page.properties?.["日付"]?.date?.start ?? "";
-
+          page.properties["タイトル"]?.title?.[0]?.plain_text ?? "Untitled";
+        const date =
+          page.properties["日付"]?.date?.start ?? "";
         const url =
-          page.properties?.["URL"]?.url
-          ?? page.url
-          ?? "#";
+          page.properties["URL"]?.url ?? page.url ?? "#";
 
-        let dateStr = "";
-        if (dateRaw) {
-          const d = new Date(dateRaw);
-          dateStr = `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
-        }
+        const d = date ? new Date(date) : null;
+        const dateStr = d
+          ? `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`
+          : "";
 
         const li = document.createElement("li");
         li.className = "news-item";
         li.innerHTML = `
           <time class="news-date">${dateStr}</time>
-          <a href="${url}" target="_blank" rel="noopener" class="news-title">
-            ${title}
-          </a>
+          <a href="${url}" target="_blank" rel="noopener" class="news-title">${title}</a>
           <hr class="news-separator">
         `;
         list.appendChild(li);
       });
     })
     .catch(err => {
-      console.error("Notionニュース取得エラー:", err);
+      console.error(err);
       list.innerHTML = `<li class="news-item">ニュースを読み込めませんでした</li>`;
     });
-
 
 // ── ヒーロー動画：解像度切り替え＋モーション低減対応 ──
 const video = document.getElementById("heroVideo");
