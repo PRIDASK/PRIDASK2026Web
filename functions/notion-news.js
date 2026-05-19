@@ -99,37 +99,9 @@ export async function onRequest(context) {
   /* =========================
      正常レスポンス
   ========================= */
- const data = await notionRes.json();
+  const data = await notionRes.json();
 
-  // Notionの複雑なデータから、サイトに必要な情報だけをシンプルに抽出する
-  const formattedResults = (data.results || []).map(page => {
-    // 1. タイトルプロパティの取得（「タイトル」に修正済み対応）
-    const titleProperty = page.properties.タイトル;
-    const titleText = titleProperty?.title?.[0]?.plain_text || "Untitled";
-
-    // 2. 日付プロパティの取得
-    const dateProperty = page.properties.日付;
-    const dateText = dateProperty?.date?.start || "";
-
-    // 3. マルチセレクト（タグ）プロパティの取得
-    // ※Notionの実際の列名が「タグ」や「カテゴリ」の場合は、下記の「"タグ"」の部分を実際の列名に変更してください。
-    const selectProperty = page.properties.タグ; 
-    const tags = (selectProperty?.multi_select || []).map(item => ({
-      name: item.name,   // タグの名前（例: "重要", "お知らせ"）
-      color: item.color  // Notionでの色（例: "blue", "pink", "default"）
-    }));
-
-    return {
-      id: page.id,
-      url: page.url, // Notionページへのリンク
-      title: titleText,
-      date: dateText,
-      tags: tags     // これでマルチセレクトの名前と色のリストがサイトに送られます
-    };
-  });
-
-  // 整形したシンプルな配列データをJSONとして返す
-  return new Response(JSON.stringify({ results: formattedResults }), {
+  return new Response(JSON.stringify(data), {
     status: 200,
     headers,
   });
