@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRIDASK | Doomsday EP</title>
+
+  <!-- Meta -->
+  <meta name="description" content="PRIDASK公式サイト - Synthwave × Cyberpunk × レトロFutureな世界観で贈る音楽・アート体験">
+  <meta property="og:title" content="PRIDASK | Doomsday EP">
+  <meta property="og:description" content="幻想、崩壊、そして再生 — Synthwave×Cyberpunkな音楽世界">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts (軽量/遅延考慮) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Header / Global Nav ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pridask.com/" class="brand">
+        <img src="img/logo.svg" alt="PRIDASK" class="brand-logo" height="60" />
+      </a>
+
+      <!-- Language Switch (表示のみ / JS制御なし) -->
+      <nav class="lang-switch" aria-label="Language">
+       
+      </nav>
+
+      <!-- Hamburger (PCも同挙動) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open Menu" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+
+      <nav class="global-nav" aria-label="Global">
+        <ul>
+          <li><a href="#release">新譜</a></li>
+          <li><a href="#goods">グッズ</a></li>
+          <li><a href="#old-releases">旧譜一覧</a></li>
+          <li><a href="#kuji">くじ</a></li>
+          <li><a href="#campaign">キャンペーン</a></li>
+          <li><a href="#staff">売り子</a></li>
+          <li><a href="#sns">SNS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-inner">
+      <!-- h1 を画像に（最大450px／横幅可変） -->
+      <h1 class="hero-title">
+        <img src="img/title-doomsday.png" alt="PRIDASK New EP [Doomsday]" class="title-logo" />
+      </h1>
+
+      <!-- CTA 2連（中央寄せ／レスポンシブで縮小） -->
+      <div class="cta-row">
+        <a class="btn cta" href="#release">今すぐ聴く</a>
+        <a class="btn cta outline" href="#goods">グッズ</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===== New Release ===== -->
+    <section id="release" class="section">
+      <h2 class="section-title">New Release</h2>
+
+      <div class="grid-2 release-grid">
+        <figure class="media">
+          <img class="cover" src="img/vinyl.jpg" alt="Doomsday CD" loading="lazy" />
+        </figure>
+
+        <div class="content">
+          <p class="tagline">PRIDASK NEW EP<br>
+"Doomsday"</p>
+
+         
+          <p class="description">
+            80’sノスタルジア × 現代的エモーションが交錯する、全3曲入りコンセプチュアルEP。<br>
+            情緒あふれる力強いボーカルと、幻想的に広がるシンセウェイヴサウンドが織りなす、PRIDASKの最新作。<br><br>
+            音楽・3DCG映像・アートワーク...<br>そのすべてをPRIDASKがセルフプロデュース。<br>
+            圧倒的な没入感を演出する、全24ページ・豪華フルカラービジュアルブックレット仕様。<br>
+            レトロフューチャーな世界観を軸に、“感情”を真っ直ぐに響かせるPRIDASKの進化が、ここに刻まれる。<br><br>
+            アートと音を愛するすべての人へ――。
+          </p>
+
+
+          <div class="info-card">
+            <p>
+				<strong>タイトル :</strong> Doomsday / PRIDASK<br>
+              <strong>リリース日 :</strong> 2025/04/27(Sun)<br>
+              <strong>頒布イベント :</strong> 2025 M3春<br>
+              <strong>会場 :</strong> 東京流通センター<br>
+              <strong>ブース :</strong> 第一展示場 A-12ab「PRIDASK」<br>
+              <strong>イベント価格 :</strong> ￥2,000
+            </p>
+          </div>
+
+          <h3 class="tracklist-title">Track List</h3>
+          <ul class="tracklist">
+            <li>
+              <span class="track-number">01.</span> What is Love
+              <div class="track-controls">
+                <button class="listen-btn" data-audio="mp3/[Preview]01. What is Love.mp3">[▶ 試聴]</button>
+                <audio preload="none" class="track-audio"></audio>
+              </div>
+            </li>
+            <li>
+              <span class="track-number">02.</span> Doom Power
+              <div class="track-controls">
+                <button class="listen-btn" data-audio="mp3/[Preview]02. Doom Power.mp3">[▶ 試聴]</button>
+                <audio preload="none" class="track-audio"></audio>
+              </div>
+            </li>
+            <li>
+              <span class="track-number">03.</span> Good Night
+              <div class="track-controls">
+                <button class="listen-btn" data-audio="mp3/[Preview]03. Good Night.mp3">[▶ 試聴]</button>
+                <audio preload="none" class="track-audio"></audio>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="staff-list">
+            <li><strong>Tomoyuki Sakakida</strong>: Music Production, Arrangement, Mixing, Mastering, 3DCG Engineering</li>
+            <li><strong>Aikapin</strong>: Vocal, Lyrics, Composition, Artwork, Video Production, Character Editing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/0MIF5DDwJRA?si=ES7zmjZKaLubEp8u"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ===== Goods（カード化 & 可読性UP） ===== -->
+    <section id="goods" class="section">
+      <h2 class="section-title">Goods</h2>
+
+      <div class="goods-grid">
+        <article class="card">
+          <figure class="card-media">
+            <img src="img/vinyl3.jpg" alt="グッズセット" loading="lazy" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">[Doomsday] 24Pブックレットセット</h3>
+            <p><strong>仕様：</strong>A5スクエア24Pブックレット + CD + DLコード + ステッカー + ポストカード<br>
+<strong>価格：</strong>￥2,000
+			  </p>
+			   <p><strong>委託ショップ：</strong></p>
+            <div class="btn-row">
+              <a class="btn sm" href="https://pridask.booth.pm/items/6822148" target="_blank" rel="noopener">BOOTH</a>
+              <a class="btn sm" href="https://www.tanocstore.net/shopdetail/000000004116/" target="_blank" rel="noopener">TANO*C STORE</a>
+              <a class="btn sm" href="https://www.diverse.direct/pridask/pdsk-0032/" target="_blank" rel="noopener">DIVERSE DIRECT</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card-media">
+            <img src="img/vinyl4.jpg" alt="Tシャツセット" loading="lazy" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">[Doomsday] Tシャツ＋ブックレット</h3>
+            <p><strong>仕様：</strong>XL Tシャツ + CD + ステッカー + ポストカード<br>
+<strong>価格：</strong>￥5,000</p>
+			  <p><strong>予約取り扱い：</strong></p>
+            <div class="btn-row">
+              <a class="btn sm" href="https://pridask.fanbox.cc/posts/9739591" target="_blank" rel="noopener">FANBOX</a>
+              <a class="btn sm" href="https://pridask.booth.pm/items/6822496" target="_blank" rel="noopener">BOOTH</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 旧譜一覧 / くじ / キャンペーン / 売り子 ===== -->
+    <section id="old-releases" class="section">
+      <h2 class="section-title">Old</h2>
+      <ul class="card-grid min-3">
+        <li class="card v-card">
+          <img src="img/CD1.jpg" alt="Humanism ジャケット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/5696634">Humanism</a></h4>
+          <p>￥2,000</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/CD2.jpg" alt="Humanism(特装版) ジャケット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/5676474">Humanism(特装版)</a></h4>
+          <p>￥4,000</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/9-3.jpg" alt="Akatsuki＆Reimeiセット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/5218638">Akatsuki＆Reimeiセット</a></h4>
+          <p>￥1,000</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/7.jpg" alt="MOONSHOT ジャケット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/3527903">MOONSHOT</a></h4>
+          <p>￥1,500</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/9.jpg" alt="347 Days Later ジャケット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/2496277">347 Days Later</a></h4>
+          <p>￥1,500</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/9-2.jpg" alt="Cybermirror ジャケット" loading="lazy" />
+          <h4><a href="https://pridask.booth.pm/items/1058382">20's</a></h4>
+          <p>￥1,500</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="kuji" class="section">
+      <h2 class="section-title">PRIDASKくじ<br>景品一覧</h2>
+      <p class="note center">1回 ￥1,000<br>※景品内容は変更になる可能性があります</p>
+
+      <ul class="card-grid min-3">
+        <li class="card v-card">
+          <img src="img/gallery/L.jpg" alt="特大タペストリー" loading="lazy" />
+          <b>ラストワン賞</b>
+          <p>特大タペストリー(50cm×75cm)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/A.jpg" alt="パーカー" loading="lazy" />
+          <b>A賞</b>
+          <p>パーカー（XLサイズ）</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/B.jpg" alt="タペストリー" loading="lazy" />
+          <b>B賞</b>
+          <p>タペストリー(Mサイズ45cm×30cm)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/C.jpg" alt="大判バスタオル" loading="lazy" />
+          <b>C賞</b>
+          <p>大判バスタオル(全2種)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/D.jpg" alt="トートバッグ" loading="lazy" />
+          <b>D賞</b>
+          <p>トートバッグ(全2種)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/E.jpg" alt="ポーチ" loading="lazy" />
+          <b>E賞</b>
+          <p>ポーチ(全2種)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/F.jpg" alt="2025年版カレンダー" loading="lazy" />
+          <b>F賞</b>
+          <p>2025年版カレンダー</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/G.jpg" alt="フォトジェニックキーホルダー" loading="lazy" />
+          <b>G賞</b>
+          <p>フォトジェニックキーホルダー(全3種)</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/gallery/H.jpg" alt="フィルムアートスタンド" loading="lazy" />
+          <b>H賞</b>
+          <p>フィルムアートスタンド(全3種)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="campaign" class="section">
+      <h2 class="section-title">Campaign</h2>
+      <ul class="card-grid min-3">
+        <li class="card v-card">
+          <img src="img/15.jpg" alt="Xフォローで旧譜DLカード" loading="lazy" />
+          <b>Xフォローで旧譜DLカードプレゼント</b>
+          <p>AikapinとSakakidaのXアカウントフォローで、PRIDASKの旧譜シングルDLカード(ランダム)をプレゼント！<br>※数量限定の為無くなり次第終了となります。</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/16.jpg" alt="[Doomsday]ステッカー" loading="lazy" />
+          <b>ステッカープレゼント</b>
+          <p>ブース来場者の皆様に[Doomsday]ステッカーをプレゼント！</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/17.jpg" alt="初めてのPRIDASKセット" loading="lazy" />
+          <b>初めてのPRIDASKセット</b>
+          <p>PRIDASKの1st、2nd、3rd、4thアルバム4枚セットが5000円に！</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="staff" class="section">
+      <h2 class="section-title">売り子紹介</h2>
+      <ul class="card-grid min-3">
+        <li class="card v-card">
+          <img src="img/12.jpg" alt="Aikapin" loading="lazy" />
+          <p>Aikapin<br>Vocal, Art Director</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/11.jpg" alt="Tomoyuki Sakakida" loading="lazy" />
+          <p>Tomoyuki Sakakida<br>DJ, Music Producer</p>
+        </li>
+        <li class="card v-card">
+          <img src="img/13.jpg" alt="LEO" loading="lazy" />
+          <p>LEO<br>Stylist, Dancer</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="notice" class="section">
+      <h2 class="section-title">Attention</h2>
+      <div class="notice">
+        <p>・ブース前のたむろはご遠慮ください。<br>
+           ・差し入れは歓迎しますが、生もの・大型・手作り品はお控えください。<br>
+           ・Aikapin宛の差し入れには小麦を避けてください（アレルギーのため）。<br>
+           ・サインは当サークル頒布物のみ、14時〜イベント終了まで対応いたします。</p>
+      </div>
+    </section>
+
+    <!-- ===== SNS ===== -->
+    <section id="sns" class="section">
+      <h2 class="section-title">SNS</h2>
+      <ul class="sns-list">
+        <li>
+          <a href="https://x.com/aikapin" target="_blank" rel="noopener" aria-label="X">
+            <!-- X/Twitter SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.23 3H20l-6.48 7.4L21 21h-5.6l-4.38-5.16L5.8 21H3l7.02-8L3 3h5.68l4 4.72L17.23 3Zm-9.9 2h-1.8l4.58 5.42L5 19h1.83l4.25-5 4.5 5H19l-5.6-6.2L17.9 5h-1.8l-3.65 4.3L7.33 5Z"/></svg>
+            X
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@PRIDASK" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.5s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.2-.9C16.8 4 12 4 12 4h0s-4.8 0-8 .3c-.6.1-1.4.1-2.2.9C1.1 5.9 1 7.5 1 7.5S.8 9.4.8 11.4v1.3C.8 14.7 1 16.6 1 16.6s.2 1.6.8 2.3c.8.8 1.9.8 2.4.9 1.8.2 7.8.3 7.8.3s4.8 0 8-.3c.6-.1 1.4-.1 2.2-.9.6-.7.8-2.3.8-2.3s.2-1.9.2-3.9v-1.3c0-2-.2-3.9-.2-3.9ZM9.8 14.9V8.8l6.2 3-6.2 3.1Z"/></svg>
+            YouTube
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/pridaskofficial/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13 3h4V0h-4a5 5 0 0 0-5 5v3H5v4h3v12h4V12h3.1l.9-4H12V5a2 2 0 0 1 1.9-2Z"/></svg>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/tmykskkd/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7Zm0 2.2a2.8 2.8 0 1 1 0 5.6a2.8 2.8 0 0 1 0-5.6Zm6.3-.9a1.2 1.2 0 1 0 0-2.4a1.2 1.2 0 0 0 0 2.4Z"/></svg>
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 PRIDASK All rights reserved.</small>
+  </footer>
+
+  <!-- ===== JS（試聴のフェード制御のみ軽量維持） ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const allAudios = [];
+      document.querySelectorAll(".listen-btn").forEach(btn => {
+        const audio = btn.parentElement.querySelector(".track-audio");
+        allAudios.push(audio);
+        btn.addEventListener("click", () => {
+          allAudios.forEach(a => {
+            if (a !== audio && !a.paused) { a.pause(); a.currentTime = 0; a.volume = 1; }
+          });
+          if (!audio.paused && !audio.ended) { audio.pause(); audio.currentTime = 0; audio.volume = 1; return; }
+          if (audio.src !== btn.dataset.audio) audio.src = btn.dataset.audio;
+          audio.volume = 0;
+          audio.play().then(() => {
+            let v = 0;
+            const id = setInterval(() => { v += 0.05; audio.volume = Math.min(v, 1); if (v >= 1) clearInterval(id); }, 60);
+          }).catch(console.error);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

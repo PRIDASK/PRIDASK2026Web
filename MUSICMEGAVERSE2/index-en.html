@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MUSIC MEGAVERSE 2 | Special Site (EN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Basic -->
+  <meta name="description" content="Official special site for MUSIC MEGAVERSE 2. Story, system, specs, characters, teaser, island code & how to play, download links, staff, previous title, and awards.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://pridask.com/mmv2/index-en.html">
+
+  <!-- Multilingual -->
+  <link rel="alternate" hreflang="ja" href="https://pridask.com/mmv2/index.html">
+  <link rel="alternate" hreflang="en" href="https://pridask.com/mmv2/index-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://pridask.com/mmv2/index-en.html">
+	
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+	
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MUSIC MEGAVERSE 2">
+  <meta property="og:title" content="MUSIC MEGAVERSE 2 | Special Site">
+  <meta property="og:description" content="Explore the story, system, specs, characters, teaser, island code & how to play, downloads, staff, previous title, and awards.">
+  <meta property="og:url" content="https://pridask.com/mmv2/index-en.html">
+  <meta property="og:image" content="https://pridask.com/mmv2/ogp/megaverse2_ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MUSIC MEGAVERSE 2 OGP Image">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+
+  <!-- X(Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MUSIC MEGAVERSE 2 | Special Site">
+  <meta name="twitter:description" content="Official special site for MUSIC MEGAVERSE 2.">
+  <meta name="twitter:image" content="https://pridask.com/mmv2/ogp/megaverse2_ogp.jpg">
+  <meta name="twitter:image:alt" content="MUSIC MEGAVERSE 2 OGP Image">
+
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <!-- ================= Header ================= -->
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <!-- Brand (left) -->
+    <a class="brand" href="#top" aria-label="MUSIC MEGAVERSE2 Home">
+      <!-- ロゴ差し替え -->
+      <a class="brand-logo-link"
+     href="https://pridask.com/"
+     target="_blank"
+     rel="noopener"
+     aria-label="PRIDASK公式サイトへ">
+    <img src="./assets/logo.svg" alt="PRIDASK" class="brand-logo" />
+  </a>
+    </a>
+
+    <!-- spacer: brandを左、スイッチ＆ハンバーガーを右へ寄せる -->
+    <div class="header-spacer"></div>
+
+    <!-- Language switch (right-top, always visible; NOT inside hamburger) -->
+    <div class="lang-switch" role="tablist" aria-label="Language switch">
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="ja"><a href="index.html">JP</a></button>
+      <button class="lang-btn active" role="tab" aria-selected="true" data-lang="en">EN</button>
+    </div>
+
+    <!-- Hamburger (always visible on all viewports) -->
+    <div class="hamburger">
+      <!-- Toggle -->
+      <input id="navToggle" type="checkbox" aria-label="メニューを開く" />
+      <label for="navToggle" class="hamburger-btn" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <!-- Drawer panel -->
+      <div class="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
+        <div class="drawer-inner">
+          <a class="drawer-link" href="#story" onclick="closeDrawer()">Story</a>
+          <a class="drawer-link" href="#system" onclick="closeDrawer()">System</a>
+          <a class="drawer-link" href="#specs" onclick="closeDrawer()">Specs</a>
+          <a class="drawer-link" href="#characters" onclick="closeDrawer()">Characters</a>
+          <a class="drawer-link" href="#teaser" onclick="closeDrawer()">Teaser</a>
+          <a class="drawer-link" href="#island" onclick="closeDrawer()">Island Code</a>
+          <a class="drawer-link" href="#access" onclick="closeDrawer()">How to Play</a>
+          <a class="drawer-link" href="#download" onclick="closeDrawer()">Download</a>
+          <a class="drawer-link" href="#credits" onclick="closeDrawer()">Credits</a>
+          <a class="drawer-link" href="#previous" onclick="closeDrawer()">Previous Title</a>
+          <a class="drawer-link" href="#awards" onclick="closeDrawer()">Awards</a>
+        </div>
+      </div>
+
+      <!-- Scrim (dark backdrop; click to close) -->
+      <div class="drawer-scrim" aria-hidden="true" onclick="closeDrawer()"></div>
+    </div>
+  </div>
+</header>
+
+  <main id="top">
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <!-- 背景ビジュアル（差し替え） -->
+      <div class="hero-bg" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 960px)" srcset="./assets/hero-portrait.jpg" />
+      <img src="./assets/hero-wide.jpg" alt="" width="1920" height="1080" loading="eager" />
+    </picture>
+  </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+         <h1 class="hero-title">
+  <!-- 画像ロゴ＋下線用ラッパ -->
+  <span class="underline-img" aria-label="MUSIC MEGAVERSE2">
+    <img src="./assets/mmv2-title-logo.png" alt="" width="720" height="164" loading="eager" />
+    <span class="sr-only">MUSIC MEGAVERSE2</span>
+  </span><br>
+</h1>
+          <p class="hero-lead hero-lead--neon">
+            A music-meets-RPG set in the quiet Japanese town of Hachiware, where you face the calamity “AKATSUKI.”<br>
+  Music and story blend naturally to deepen exploration — PRIDASK’s game project.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#teaser" aria-label="Watch Teaser">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Watch Teaser
+            </a>
+            <a class="btn btn-secondary" href="#access">How to Play</a>
+          </div>
+        </div>
+        <!-- 任意でヒーロー右側にビジュアルパネル等 -->
+        <div class="hero-side card">
+          <h3>News</h3>
+          <ul class="news-list">
+            <li><time datetime="2025-10-24">2025-10-24</time> Released!</li>
+            <li><time datetime="2025-10-19">2025-10-19</time> Teaser Published</li>
+            <li><time datetime="2025-10-19">2025-10-19</time> Special Site Launched</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 島コード（強調セクション） ================= -->
+    <section id="island" class="island-code">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Fortnite Island Code</h2>
+        </div>
+
+        <!-- 大きく見せるボックス -->
+        <div class="code-box card" role="group" aria-label="島コード">
+          <!-- 確定後に置換 -->
+          <!-- ▼▼▼ ここを確定コードに置換 ▼▼▼ -->
+          <span class="code" id="islandCodeDisplay">6106-1824-4490</span>
+          <button class="copy-code" type="button" aria-label="Copy" data-target="#islandCodeDisplay">Copy</button>
+          <!-- ▲▲▲ ここを確定コードに置換 ▲▲▲ -->
+
+          <p class="code-note">Open <a href="https://www.fortnite.com/download?" target="_blank" rel="noopener"><b>Fortnite</b></a>, then enter the island code from the <b>search button</b> on the main screen!</p>
+          <div class="code-cta">
+            <a class="btn btn-primary" href="#access">How to Play</a>
+            <a class="btn btn-ghost" target="_blank" href="https://www.fortnite.com/download?">Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	  <!-- ================= ティーザー ================= -->
+    <section id="teaser">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Teaser</h2>
+        </div>
+
+        <div class="video-embed">
+          <!-- YouTube/VimeoのURLに置換 -->
+        <iframe
+  src="https://www.youtube.com/embed/kClpRnHa9YQ?si=6gIVY6CbgXzaBpPF"
+  title="MUSIC MEGAVERSE2 Teaser 2"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  loading="lazy">
+</iframe>
+        </div>
+      </div>
+    </section>
+	  
+    <!-- ================= ストーリー / 世界観 ================= -->
+    <section id="story">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Story</h2>
+        </div>
+
+        <!-- テキスト＋画像（左右） -->
+        <article class="content-with-image">
+          <div class="cwi-image">
+            <!-- 差し替え -->
+            <img src="./assets/story-01.jpg" alt="ハチワレ町と≪暁≫のイメージ" />
+          </div>
+          <div class="cwi-body card">
+            <h3>New experience where music meets RPG.</h3>
+            <p>
+              Hachiware Town is alive with a festival.<br>
+But a calamity called “AKATSUKI” strikes without warning.<br>
+It amplifies the darkness in people’s hearts and erodes their reason.<br>
+Can you become the hero who saves this town?<br>
+An adventure where human drama intertwines with sound and story.<br>
+
+            </p>
+          </div>
+        </article>
+
+        <article class="content-with-image reverse">
+          <div class="cwi-image">
+            <!-- 差し替え -->
+            <img src="./assets/story-02.jpg" alt="ライブ演出と世界の同期イメージ" />
+          </div>
+          <div class="cwi-body card">
+            <h3>Immersive Live Show</h3>
+            <p>
+             At the climax, light, visuals, and sound come together for a deeply immersive live show.<br>
+A fresh game experience that envelops your senses.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= システム ================= -->
+    <section id="system">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">System</h2>
+        </div>
+
+        <div class="system-grid">
+          <article class="system-item card">
+            <div class="system-thumb">
+              <!-- 差し替え -->
+              <img src="./assets/system-quest.jpg" alt="探索とクエストのイメージ" />
+            </div>
+            <div class="system-body">
+              <h3>Exploration × Quests</h3>
+              <p>To calm the town’s disturbed hearts, you’ll need the power of sacred talismans.<br>
+Collect seven talismans and quell “AKATSUKI”!</p>
+            </div>
+          </article>
+
+          <article class="system-item card">
+            <div class="system-thumb">
+              <!-- 差し替え -->
+              <img src="./assets/system-coop.jpg" alt="ライブと同期のイメージ" />
+            </div>
+            <div class="system-body">
+              <h3>Varied Locations</h3>
+              <p>Stations, shopping streets, department stores, karaoke, cafés, eateries, shrines, hot springs—every visit brings new discoveries.</p>
+            </div>
+          </article>
+
+          <article class="system-item card">
+            <div class="system-thumb">
+              <!-- 差し替え -->
+              <img src="./assets/system-town.jpg" alt="協力プレイのイメージ" />
+            </div>
+            <div class="system-body">
+              <h3>Evolving Residents</h3>
+              <p>Dialogue and behavior shift with events and progress. Your choices gently move the town forward.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 仕様 ================= -->
+    <section id="specs">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Specs ＆ Support</h2>
+        </div>
+
+        <div class="specs-grid">
+          <dl class="spec card">
+            <dt>Languages</dt><dd>Japanese / English (auto-translation available for other languages)</dd>
+          </dl>
+          <dl class="spec card">
+            <dt>Players</dt><dd>1 (single-player)</dd>
+          </dl>
+          <dl class="spec card">
+            <dt>Platform</dt><dd>Fortnite</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= キャラクター ================= -->
+    <section id="characters">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Characters</h2>
+        </div>
+
+        <div class="chars-grid">
+          <article class="char card">
+            <div class="char-img"><img src="./assets/char-aikapin.jpg" alt="Aikapin" /></div>
+            <h3>Aikapin</h3>
+            <p>Vocalist of PRIDASK, the music unit performing at Hachiware Town’s festival. Seems to be troubled by the influence of “AKATSUKI.”</p>
+          </article>
+          <article class="char card">
+            <div class="char-img"><img src="./assets/char-sakakida.jpg" alt="Sakakida" /></div>
+            <h3>Sakakida</h3>
+            <p>DJ of PRIDASK. At times acts as the player’s “DJ mentor,” lending a hand.
+</p>
+          </article>
+          <article class="char card">
+            <div class="char-img"><img src="./assets/char-tao.jpg" alt="タオ駅長" /></div>
+            <h3>Stationmaster Tao</h3>
+            <p>Stationmaster of Hachiware Station, where your story begins—a big brother figure who loves the town.</p>
+          </article>
+			 <article class="char card">
+            <div class="char-img"><img src="./assets/char-lanlan.jpg" alt="駅員 ランラン" /></div>
+            <h3>Lanlan</h3>
+            <p>A lively station attendant—playful, free-spirited, and adored by all.
+
+</p>
+          </article>
+			 <article class="char card">
+            <div class="char-img"><img src="./assets/char-roo.jpg" alt="駅員 ルー" /></div>
+            <h3>Roo</h3>
+            <p>Lanlan’s twin brother. Gentle-natured and fond of Stationmaster Tao.
+
+</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= 遊び方（ステップ画像付き） ================= -->
+    <section id="access">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">How to Play in Fortnite</h2>
+        </div>
+
+        <ol class="steps-grid">
+          <li class="step card">
+            <figure class="step-figure">
+              <!-- 差し替え：Discover/発見画面のスクショなど -->
+              <img src="./assets/access-01.jpg" alt="発見からアイランドコード入力" />
+              <figcaption class="step-caption">
+                1. Install <a href="https://www.fortnite.com/download?" target="_blank" rel="noopener"><b>Fortnite</b></a> and click <a href="https://www.fortnite.com/play/island/6106-1824-4490" target="_blank" rel="noopener"><b>“here”</b></a> to jump in!<br>
+Or search the island code from the Fortnite’s search menu!
+              </figcaption>
+            </figure>
+          </li>
+          <li class="step card">
+            <figure class="step-figure">
+             <img src="./assets/access-02.jpg" alt="島ページを開く" />
+              <figcaption class="step-caption">
+                2. Select “MUSIC MEGAVERSE 2” from the results.
+              </figcaption>
+            </figure>
+          </li>
+          <li class="step card">
+            <figure class="step-figure">
+             <img src="./assets/access-03.jpg" alt="プレイ開始" />
+              <figcaption class="step-caption">
+                3. Open the island page, check details, and select “Play.”
+              </figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ダウンロード / 外部リンク ================= -->
+    <section id="download">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Download / External Links</h2>
+        </div>
+
+        <div class="download-cards">
+          <article class="download-card card">
+         <h3>
+   <svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true">
+     <!-- arrow down into tray -->
+     <path d="M11 3h2v8.17l2.59-2.58L17 10l-5 5-5-5 1.41-1.41L11 11.17V3Z"/>
+     <path d="M4 18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3h-2v3H6v-3H4v3Z"/>
+   </svg>
+   Fortnite DL Page
+ </h3>
+            <p>Get Fortnite first to play this game.</p>
+            <!-- 差し替え -->
+           <a class="btn btn-primary" href="https://www.fortnite.com/download?lang=ja" target="_blank" rel="noopener">Go to DL Page</a>
+          </article>
+
+          <article class="download-card card">
+             <h3>
+  <svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 3a9 9 0 0 0-9 9v5a3 3 0 0 0 3 3h2v-8H6a7 7 0 0 1 14 0h-2v8h2a3 3 0 0 0 3-3v-5a9 9 0 0 0-9-9Z"/>
+  </svg>
+ Soundtrack
+</h3>
+            <p>All in-game tracks are original works by PRIDASK.</p>
+            <!-- 差し替え -->
+            <a class="btn btn-primary" href="https://pridask.bandcamp.com/" target="_blank" rel="noopener">Listen</a>
+          </article>
+
+          <article class="download-card card">
+          <h3>
+  <svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M7 6H4V4h3l1 3h11l-1.3 7.2A2 2 0 0 1 15.74 16H9.26a2 2 0 0 1-1.96-1.8L6.2 6H7Z"/>
+    <circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+  </svg>
+  Goods
+</h3>
+            <p>Official merchandise inspired by the game’s world. (In preparation)</p>
+            <!-- 差し替え -->
+          <a class="btn btn-primary" href="https://pridask.booth.pm/" target="_blank" rel="noopener">Shop</a>
+          </article>
+
+          <article class="download-card card">
+         <h3>
+  <svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 11l8-6 8 6v9a2 2 0 0 1-2 2h-4v-6H10v6H6a2 2 0 0 1-2-2v-9Z"/>
+  </svg>
+  PRIDASK Official Site
+</h3>
+            <p>Check PRIDASK news and other projects!</p>
+          <a class="btn btn-primary" href="https://pridask.com/" target="_blank" rel="noopener">Official Site</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= スタッフクレジット ================= -->
+    <section id="credits">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">スタッフクレジット</h2>
+        </div>
+
+        <div class="credits-grid">
+          <article class="card">
+            <h3>PRIDASK</h3>
+            <ul class="credit-list">
+
+				<li>Vocal / Songwriting / Art Direction / Map Design / Character Design / Story ＆ Scenario / Video Production / Website : <b>Aikapin</b></li><br>
+
+              <li>DJ / Music Production / Sound Design / Engineering / Cutscenes / Stage Lighting : <b>Tomoyuki Sakakida</b></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Special Thanks</h3>
+            <ul class="credit-list">
+				 <li>UEFN Technical Support : <b>Yuya Shiotani</b></li><br>
+
+              <li><b>All PRIDASK FANBOX supporters</b></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 前作 ================= -->
+   <section id="previous" class="previous">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Previous Title</h2>
+    </div>
+
+    <!-- PC: 2カラム（左：16:9サムネ / 右：テキスト＆島コード）、SP: 1カラム -->
+    <article class="prev-layout">
+      <!-- 16:9 サムネ（差し替え） -->
+      <div class="prev-thumb">
+        <!-- 必要に応じて a で拡大画像・詳細へリンク -->
+        <a href="https://www.fortnite.com/@pridask/3632-2839-9780?">
+          <img src="./assets/music_mega_verse1920.png" alt="前作『MUSIC MEGAVERSE』のサムネイル" />
+        </a>
+      </div>
+
+      <!-- 本文＆島コード -->
+      <div class="prev-body card">
+        <h3 style="margin-top:0">MUSIC MEGAVERSE</h3>
+        <p>
+          An experimental first title blending live music and adventure. Experience a cross-dimensional live show now!
+        </p>
+
+        <!-- 島コード（コピー対応） -->
+        <div class="island-prev" role="group" aria-label="前作の島コード">
+          <!-- ▼▼ 確定コードに置換 ▼▼ -->
+          <span class="code" id="prevIslandCodeDisplay">3632-2839-9780</span>
+          <button class="copy-code" type="button"
+                  aria-label="前作の島コードをコピー"
+                  data-target="#prevIslandCodeDisplay">Copy</button>
+          <!-- ▲▲ 置換ここまで ▲▲ -->
+        </div>
+
+        <!-- 予告編（任意：サムネ優先の場合は非表示でもOK） -->
+        <div class="video-embed sm" style="margin-top:16px">
+          <!-- YouTube/VimeoのURLに置換 -->
+         <iframe
+  src="https://www.youtube.com/embed/5Lzhm6r-QV4?rel=0&modestbranding=1&playsinline=1"
+  title="MUSIC MEGAVERSE Trailer"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  loading="lazy"
+></iframe>
+        </div>
+
+        <!-- 詳細リンク（任意） -->
+        <!-- <div style="margin-top:16px">
+          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">詳細ページへ</a>
+        </div> -->
+      </div>
+    </article>
+  </div>
+</section>
+
+    <!-- ================= 受賞歴 ================= -->
+    <section id="awards">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Contests ＆ Awards</h2>
+        </div>
+
+        <div class="awards card">
+          <ul class="awards-list">
+            <li>MUSIC MEGAVERSE – The Game Awards 2023: Best of UEFN (Nominated)</li>
+            <li>Featured in Fortnite Official Sizzle Reel</li>
+			<li>Featured on “Epic Picks” page</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+	<!-- ================= SNS ================= -->
+<section id="social" class="social">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">SNS / Streaming</h2>
+    </div>
+
+    <nav class="social-row" aria-label="SNS links">
+      <!-- X（Twitter） -->
+      <a class="social-btn" href="https://x.com/aikapin" target="_blank" rel="noopener" aria-label="X（Twitter）">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2H21l-6.54 7.47L22 22h-6.8l-4.77-6.23L4.96 22H2l7.04-8.04L2 2h6.86l4.32 5.68L18.244 2Zm-2.38 18h1.92L8.23 4h-1.9l9.53 16Z"/></svg>
+        <span>X</span>
+      </a>
+		
+		<!-- Facebook -->
+<a class="social-btn"
+   href="https://www.facebook.com/pridaskofficial/"
+   target="_blank" rel="noopener"
+   aria-label="Facebook">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M22 12A10 10 0 1 0 10.56 21.9v-6.99H7.9v-2.89h2.66V9.41c0-2.63 1.56-4.08 3.95-4.08 1.14 0 2.33.2 2.33.2v2.49h-1.31c-1.29 0-1.69.8-1.69 1.62v1.95h2.88l-.46 2.89h-2.42v6.99A10 10 0 0 0 22 12Z"/>
+  </svg>
+  <span>Facebook</span>
+</a>
+      <!-- Instagram -->
+      <a class="social-btn" href="https://www.instagram.com/aikapin1101" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"/></svg>
+        <span>Instagram</span>
+      </a>
+      <!-- YouTube -->
+      <a class="social-btn" href="https://www.youtube.com/@pridask" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12c0-2.36-.2-3.96-.46-4.9a3.1 3.1 0 0 0-2.18-2.18C19.42 4.66 12 4.66 12 4.66s-7.42 0-8.36.26A3.1 3.1 0 0 0 1.46 7.1C1.2 8.04 1 9.64 1 12s.2 3.96.46 4.9a3.1 3.1 0 0 0 2.18 2.18c.94.26 8.36.26 8.36.26s7.42 0 8.36-.26a3.1 3.1 0 0 0 2.18-2.18c.26-.94.46-2.54.46-4.9ZM10 8.75l6 3.25-6 3.25V8.75Z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <!-- TikTok -->
+      <a class="social-btn" href="https://www.tiktok.com/@pridask" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2a6.7 6.7 0 0 0 .2 2.02 5.3 5.3 0 0 0 3.78 3.78A7.7 7.7 0 0 0 22 8.02v3.02a9.9 9.9 0 0 1-4.02-1.06v6.64c0 3.75-3.1 6.38-6.86 6.38S4.26 20.37 4.26 16.62c0-3.76 3.1-6.86 6.86-6.86.34 0 .68.03 1.02.08v3.2a3.72 3.72 0 0 0-1.02-.15 3.7 3.7 0 1 0 3.7 3.7V2H16Z"/></svg>
+        <span>TikTok</span>
+      </a>
+      <!-- Spotify -->
+      <a class="social-btn" href="https://open.spotify.com/intl-ja/artist/74riMUdIaFwuAa4f6ITDlO?si=_-8ud5Z4R6uXz7kID0NXag" target="_blank" rel="noopener" aria-label="Spotify">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm4.39 14.86a.84.84 0 0 1-1.16.28c-3.18-1.94-7.18-2.38-11.88-1.31a.84.84 0 0 1-.38-1.64c5.14-1.2 9.6-.71 13.12 1.41.39.24.51.76.3 1.26Zm1.65-3.09a1 1 0 0 1-1.37.33c-3.63-2.16-9.17-2.8-13.47-1.54a1 1 0 1 1-.56-1.92c4.82-1.41 10.95-.7 15.02 1.74a1 1 0 0 1 .38 1.39Zm.21-3.2c-4.16-2.47-11.07-2.7-15.03-1.51a1.17 1.17 0 1 1-.66-2.25c4.4-1.3 11.98-1.03 16.68 1.74a1.17 1.17 0 0 1-1 2.02Z"/></svg>
+        <span>Spotify</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+	
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copy">© PRIDASK / MUSIC MEGAVERSE2</p>
+    </div>
+  </footer>
+
+  <!-- ================= Scripts（最小限の振る舞い） ================= -->
+  <script>
+    // スムーススクロール（固定ヘッダー分オフセットはCSS適用後に微調整）
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            const top = el.getBoundingClientRect().top + window.scrollY - 72; // 後でCSS変数に合わせる
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // ドロワー制御
+    function closeDrawer(){
+      const t = document.getElementById('navToggle');
+      if (t) t.checked = false;
+    }
+    // 背景スクリーンはHTML側のonclickでも閉じる
+
+    // コピーボタン（data-targetにselector指定）
+    function bindCopyButtons(){
+      document.querySelectorAll('.copy-code[data-target]').forEach(btn=>{
+        btn.addEventListener('click', async ()=>{
+          const sel = btn.getAttribute('data-target');
+          const node = document.querySelector(sel);
+          if (!node) return;
+          const code = node.textContent.trim();
+          try{
+            await navigator.clipboard.writeText(code);
+            btn.textContent = 'Copied';
+            setTimeout(()=>{ btn.textContent = 'Copy'; }, 1600);
+          }catch(err){
+            // 非対応環境のフォールバック
+            const ta = document.createElement('textarea');
+            ta.value = code;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            btn.textContent = 'Copied';
+            setTimeout(()=>{ btn.textContent = 'copy'; }, 1600);
+          }
+        });
+      });
+    }
+    bindCopyButtons();
+  </script>
+</body>
+</html>
