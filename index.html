@@ -1034,7 +1034,7 @@ const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").mat
 if (!prefersReduced) {
   // モバイルは720p、PCは1080p
   const source = document.createElement("source");
-  source.src = isMobile ? "videos/hero-720p.mp4" : "videos/hero-1080p.webm";
+  source.src = isMobile ? "/videos/hero-720p.mp4?v=2" : "/videos/hero-1080p.webm?v=2";
   source.type = "video/mp4";
   video.appendChild(source);
 
